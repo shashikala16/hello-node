@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Home</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        background-image: url('background-image.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white; 
+        height:100vh;
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color: rgba(255, 255, 255, 0.5); /* Transparent background */
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .header .btn {
+        opacity: 0.7; /* Opacity for buttons */
+        margin-right: 10px; /* Adjust margin between buttons */
+    }
+    h5 {
+        color: black;
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h5 class="card-title">Admin Home</h5>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        All Events
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Cricket</a>
+                        <a class="dropdown-item" href="#">Football</a>
+                        <a class="dropdown-item" href="#">Basketball</a>
+                    </div>
+                </div>
+                <a href="create_event.html" class="btn btn-primary">Create Event</a>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Remove Event
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Cricket</a>
+                        <a class="dropdown-item" href="#">Football</a>
+                        <a class="dropdown-item" href="#">Basketball</a>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function logout() {
+        var confirmLogout = confirm("Are you sure you want to logout?");
+        if (confirmLogout) {
+            window.location.href = "main.html";
+        }
+    }
+</script>
+
+</body>
+</html>
