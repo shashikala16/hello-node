@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Admin</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-image: url('background-image.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100px;
+      background-color: rgba(255, 255, 255, 0.5); /* Transparent background */
+    }
+
+    .header .btn {
+      color: black; /* Black text color */
+      transition: color 0.3s;
+      background-color: rgba(0, 123, 255, 0.5); /* Blue button background with opacity */
+      border: none;
+      font-size: 18px; /* Increased font size */
+      padding: 10px 20px; /* Adjusted padding */
+    }
+
+    .header .btn:hover {
+      color: #007bff; /* Blue color on hover */
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <button class="btn btn-primary" onclick="goToHome()">Home</button>
+    <button class="btn btn-primary" onclick="goToParticipateEvents()">Participate Events</button>
+    <div class="dropdown">
+      <button class="btn btn-primary">My Events</button>
+      <div class="dropdown-content">
+        <a href="#">Football</a>
+        <a href="#">Cricket</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-primary">Feedback</button>
+      <div class="dropdown-content">
+        <textarea id="feedback" class="form-control" rows="3"></textarea>
+        <button class="btn btn-primary mt-2" onclick="submitFeedback()">Submit Feedback</button>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="logout()">Logout</button>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    function goToHome() {
+      window.location.href = 'main.html';
+    }
+
+    function goToParticipateEvents() {
+      window.location.href = 'participate_events.html';
+    }
+
+    function logout() {
+      if (confirm('Are you sure you want to logout?')) {
+        window.location.href = 'main.html';
+      }
+    }
+
+    function submitFeedback() {
+      var feedback = $('#feedback').val();
+      alert("Feedback submitted: " + feedback);
+      $('#feedback').val('');
+    }
+  </script>
+</body>
+</html>
