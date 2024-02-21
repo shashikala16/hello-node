@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Participate Event</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    body {
+        background-image: url('background-image.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .container {
+        margin-top: 50px;
+    }
+    .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .card-body {
+        padding: 30px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Particpate Event</h5>
+                    <form id="createEventForm">
+                        <div class="form-group">
+                            <label for="eventName">Event Name</label>
+                            <input type="text" class="form-control" id="eventName" name="eventName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDescription">Event Description</label>
+                            <textarea class="form-control" id="eventDescription" name="eventDescription" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventImage">Event Image</label>
+                            <input type="file" class="form-control-file" id="eventImage" name="eventImage">
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" class="form-control" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">End Date</label>
+                            <input type="date" class="form-control" id="endDate" name="endDate" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Participate Event</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("createEventForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        var startDate = new Date(document.getElementById("startDate").value);
+        var endDate = new Date(document.getElementById("endDate").value);
+
+        // Check if end date is less than start date
+        if (endDate < startDate) {
+            alert("End date must be after start date. Please choose a valid date.");
+            return;
+        }
+        
+        // Here you would typically send this data to your backend for processing
+        // For demonstration purposes, just showing an alert that event is added successfully
+        alert("Event added successfully!");
+
+        // Redirect to admin home page after successful event creation
+        window.location.href = "user_home.html";
+    });
+</script>
+
+</body>
+</html>
