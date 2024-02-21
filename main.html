@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sports Scheduler</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    body {
+        background-image: url('background-image.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .container {
+        margin-top: 20px; /* Adjust margin for spacing */
+        width: 400px; /* Set container width */
+    }
+    .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color: rgba(248, 247, 252, 0.5); /* Transparent background */
+    }
+    .card-body {
+        padding: 30px;
+        color: black; /* Text color */
+    }
+    .btn {
+        width: 100%;
+        margin-bottom: 10px; /* Adjust button spacing */
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+    .btn-secondary:hover {
+        background-color: #545b62;
+        border-color: #545b62;
+    }
+    .header {
+        text-align: center;
+        color: white;
+        font-size: 48px;
+        padding-top: 20px; /* Adjust padding for header */
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    Sports Scheduler
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">User & Admin Login</h5>
+            <p class="card-text">Welcome! Please select your login option.</p>
+            <a href="signin.html" class="btn btn-primary">User Login</a>
+            <a href="login.html" class="btn btn-secondary">Admin Login</a>
+            <a href="signup.html" class="btn btn-secondary">User Sign Up</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
